@@ -48,9 +48,9 @@
 					<include>**/*.xml</include>
 					<include>**/*.tld</include>
 					<include>**/*.p12</include>
-					<include>**/*.conf</include> 
+					<include>**/*.conf</include>
 				</includes>
-				<filtering>false</filtering>
+				<filtering>true</filtering>
 			</resource>
 			<resource>
 				<directory>src/main/java</directory>
@@ -70,6 +70,16 @@
 			</resource>
 		</resources>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<delimiters>
+						<delimiter>$</delimiter>
+					</delimiters>
+				</configuration>
+			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -110,5 +120,16 @@
 		<module>microboot-kafka-consumer</module>
 		<module>microboot-kafka-producer</module>
 		<module>microboot-email</module>
-	</modules> 
+		<module>microboot-task</module>
+		<module>microboot-actuator</module>
+		<module>microboot-redis</module>
+		<module>microboot-restful-api</module>
+		<module>microboot-restful-provider</module>
+		<module>microboot-restful-consumer</module>
+		<module>microboot-restful-swagger</module>
+		<module>microboot-restful-log</module>
+		<module>microboot-shiro-api</module>
+		<module>microboot-shiro-member-provider</module>
+		<module>microboot-shiro-web</module>
+	</modules>
 </project>
